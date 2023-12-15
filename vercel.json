@@ -1,0 +1,27 @@
+{
+    "name": "your-project-name",
+    "version": 2,
+    "routes": [
+      {
+        "src": "/api/.*",
+        "dest": "server.js"
+      },
+      {
+        "src": "/public/image/(.*)",
+        "dest": "src/public/image/$1"
+      },
+      {
+        "handle": "filesystem"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "server.js"
+      }
+    ],
+    "builds": [
+      {
+        "src": "server.js",
+        "use": "@vercel/node"
+      }
+    ]
+  }
